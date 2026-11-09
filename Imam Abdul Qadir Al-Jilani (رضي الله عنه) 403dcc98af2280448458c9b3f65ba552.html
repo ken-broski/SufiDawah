@@ -1,0 +1,797 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Imam Abdul Qadir Al-Jilani (رضي الله عنه)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+	/* Paint a complete callout box on every PDF page fragment. */
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+}
+
+/* For default-background callouts, render the border outline. */
+.callout.block-color-default_background {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+/*
+ * Toggles and callouts hold arbitrary content, so they can easily be taller
+ * than a page. They must stay breakable: avoiding breaks inside them makes
+ * Chromium push the whole block onto the next page, which leaves the previous
+ * page mostly empty before every long toggle.
+ */
+details,
+aside {
+	margin: 1.25em 0;
+}
+
+/* Keep a toggle's title on the same page as the start of its content. */
+summary {
+	page-break-after: avoid;
+	break-after: avoid;
+}
+
+/*
+ * Toggle headings render as <h1/h2/h3 style="display:inline-block"> inside
+ * <summary>. Without this reset, the heading's margin-top pushes it below the
+ * ::marker (▼), so the triangle and the title appear on separate lines.
+ */
+summary h1,
+summary h2,
+summary h3,
+summary h4 {
+	margin-top: 0;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding-inline: 0.125rem;
+	padding-block: 0.375rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+/*
+ * Render emoji icons using a ::before pseudo-element to keep the glyph
+ * out of the DOM textContent traversal. This avoids double-rendering icons
+ * in callouts and page titles.
+ * NOTE(slim/html-export-pseudo-icons): I can't tagref this because it will
+ * flag as a duplicate tag after codegen.
+ */
+.icon[data-emoji]::before {
+	content: attr(data-emoji);
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	margin-right: 0.4em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.tab {
+	margin: 1.25em 0;
+	padding-inline: 1rem;
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../site.css"><script src="../../../site.js" defer></script></head><body><article id="403dcc98-af22-8044-8458-c9b3f65ba552" class="page sans"><header><h1 class="page-title" dir="auto"><strong>Imam Abdul Qadir Al-Jilani (رضي الله عنه)</strong></h1><p class="page-description" dir="auto"></p></header><div class="page-body"><figure id="403dcc98-af22-806c-8417-fdf2d16cc148" class="image" data-notion-image="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/2.png" dir="ltr"><a href="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/2.png"><img style="width:704px" src="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/2.png"/></a></figure><p id="403dcc98-af22-803e-bf5e-c533f8c366d4" class="" dir="auto">Sermon Thirty-Five</p><p id="403dcc98-af22-8050-bfa3-f44bd6375842" class="" dir="auto">He, may Allah be pleased with him, said:</p><p id="403dcc98-af22-80b9-be41-df67d2ba41c6" class="" dir="auto"><strong>Woe to you, arrogant ones!¹</strong> Your acts of worship do not enter the earth — rather, they ascend to the heaven. Allah, Mighty and Majestic, has said: &quot;To Him ascends the good word, and the righteous deed raises it.&quot;</p><p id="403dcc98-af22-80e0-beb7-e516f9ed6f9e" class="" dir="auto"><strong>Our Lord, Mighty and Majestic, rose over the Throne and encompassed all dominion, and His knowledge encompasses all things²</strong> — <strong>the Originator of seven verses in the Qur&#x27;an bearing this meaning, which I cannot erase for the sake of your ignorance and your recklessness.³</strong> <strong>You threaten me with your sword — I am not frightened.⁴</strong> You entice me with your wealth —</p><p id="403dcc98-af22-8052-89b7-ca9814139d9f" class="" dir="auto">I do not desire it; I fear only Allah, Mighty and Majestic, and I fear none besides Him. I hope in Him and hope in none besides Him. I worship Him and worship none besides Him. I work for Him and work for none besides Him. My provision is with Him and in His hand. Everything belongs to the servant, and the servant possesses nothing apart from his Master.**</p><blockquote id="403dcc98-af22-8069-9841-c83ed0628163" class="" dir="auto"><strong>¹Shaykhuna Abdul Qadir Al-Jilani (radiallahu anhu) rebuking to the arrogant ones whom their traits become apparent in this passage, opposing him for his creed, and him (i.e. Abdul Qadir Al-Jilani) rebuking them saying that the acts of worship ascend to the heaven.<br/>²Shaykhuna Abdul Qadir Al-Jilani (radiallahu anhu) affirming that Allah &#x27;ala Al-Arsh istawa (established himself over his throne).<br/>³Shaykhuna Abdul Qadir Al-Jilani (radiallahu anhu) affirming that there&#x27;s 7 verses of Istiwa&#x27; of Allah over his throne and him affirming the meaning of Istiwa&#x27; (a proof against those who claim that he did Tafwidh Al-Mana&#x27;), and him affirming that he cannot erase the meaning of Istiwa&#x27; in those verses just because of the sake of the ignorant and reckless ones who do so (i.e. the second person(s) POV he&#x27;s talking to)<br/>⁴Shaykhuna Abdul Qadir Al-Jilani (radiallahu anhu) being fearless against the mufawwidha who threaten him with the sword.</strong></blockquote><figure id="403dcc98-af22-803e-bc41-c1fee1a91634" class="image" data-notion-image="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/Fath_Al-Rabbani_P._148-149.png" dir="ltr"><a href="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/Fath_Al-Rabbani_P._148-149.png"><img style="width:2250px" src="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/Fath_Al-Rabbani_P._148-149.png"/></a></figure><blockquote id="403dcc98-af22-806c-97de-cd91b0784feb" class="" dir="auto">Fath Al-Rabbani, P. 148-149 - Sermon 35</blockquote><hr id="403dcc98-af22-80bf-b3ee-c881f46bb728" dir="auto"/><p id="403dcc98-af22-80ae-9255-ca6af3ecd84c" class="" dir="auto">Abd al-Qādir al-Jīlānī (d. 561 AH) said:</p><p id="403dcc98-af22-80d5-a660-d0e8b7537b67" class="" dir="auto"><strong>&quot;Ahl al-Sunnah believe that Allah will seat His Messenger and His chosen Prophet — above all other messengers and prophets — with Him upon the Throne on the Day of Judgment.&quot;</strong></p><figure id="403dcc98-af22-80a3-8e6c-d7d34add93aa" class="image" data-notion-image="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/166_(1).webp" dir="ltr"><a href="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/166_(1).webp"><img style="width:704px" src="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/166_(1).webp"/></a></figure><blockquote id="403dcc98-af22-80f4-988a-eb2fbb1de303" class="" dir="auto">Al-Ghunyah Vol. 1, P. 150</blockquote><p id="403dcc98-af22-80b9-82c5-c9ab0757546d" class="" dir="auto">⚠️ Reminder to not bash people who don&#x27;t follow this opinion because there is <strong>IKHTILĀF</strong> ⚠️</p><hr id="403dcc98-af22-803f-8ebc-de487f17a228" dir="auto"/><p id="403dcc98-af22-80a2-8950-db05123216ed" class="" dir="auto">Abdul Qadir Al-Jilani said:</p><p id="403dcc98-af22-80e4-b8af-f1899b4c590b" class="" dir="auto"><strong>&quot;It is necessary to affirm the attribute of </strong><em><strong>istiwa’</strong></em><strong> (rising over) without </strong><em><strong>ta’wil</strong></em><strong> (interpretation), and that it is the </strong><em><strong>istiwa’</strong></em><strong> of the Essence over the Throne, not upon the meaning of </strong><em><strong>qu‘ud</strong></em><strong> (sitting) and </strong><em><strong>mumassah</strong></em><strong> (physical contact), as the Mujassimah and Karramiyyah said, nor upon the meaning of </strong><em><strong>‘uluww</strong></em><strong> (highness) and </strong><em><strong>rif‘ah</strong></em><strong> (elevation), as the Ash‘ariyyah said, nor upon the meaning of </strong><em><strong>istila’</strong></em><strong> (mastery) and </strong><em><strong>ghalabah</strong></em><strong> (overpowering), as the Mu‘tazilah said, because the Shari‘ah did not come with that, nor was it transmitted from any of the Companions and Successors among the righteous Salaf from the people of hadith. Rather, what was transmitted from them is to carry it upon its unrestricted meaning.&quot;</strong></p><figure id="403dcc98-af22-80d6-911f-d3636d67722a" class="image" data-notion-image="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/Al-Ghunyah_Vol._1_P._124.png" dir="ltr"><a href="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/Al-Ghunyah_Vol._1_P._124.png"><img style="width:2074px" src="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/Al-Ghunyah_Vol._1_P._124.png"/></a></figure><blockquote id="403dcc98-af22-80e1-9651-cbe489e7ade4" class="" dir="auto">Al-Ghunyah, Vol. 1, P. 124</blockquote><hr id="403dcc98-af22-8074-a63d-fb15eb0edc8a" dir="auto"/><p id="403dcc98-af22-80c6-8a1e-f98b9e6b25d0" class="" dir="auto">Abdul Qadir Al-Jilani said:</p><p id="403dcc98-af22-806b-afd8-d64239b23058" class="" dir="auto"><strong>&quot;And He is distinct from His creation, no place is devoid of His knowledge, and it is not permissible to describe Him as being in every place. </strong><em><strong>Rather, it is said: He is in the heaven, over the Throne,</strong></em><strong> as He, Glorious is His praise, said: {The Most Merciful rose over the Throne} [Ta-Ha: 5], and His saying: {Then the Most Merciful rose over the Throne} [al-Furqan: 59], and Allah, Exalted is He, said: {To Him ascends the good word, and the righteous deed raises it} [Fatir: 10].&quot;</strong></p><figure id="403dcc98-af22-8081-a443-c0628f19b7ad" class="image" data-notion-image="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/Al-Ghunyah_Vol._1_P._124_(2).png" dir="ltr"><a href="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/Al-Ghunyah_Vol._1_P._124_(2).png"><img style="width:2074px" src="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/Al-Ghunyah_Vol._1_P._124_(2).png"/></a></figure><blockquote id="403dcc98-af22-8005-915a-d3e5c020c595" class="" dir="auto">Al-Ghunyah, Vol. 1, P. 124</blockquote><hr id="403dcc98-af22-80cb-b147-cd7eaba16860" dir="auto"/><p id="403dcc98-af22-80f6-ac6c-f38e8d3cb987" class="" dir="auto">Abdul Qadir Al-Jilani said:</p><p id="403dcc98-af22-80d2-b79a-f69a5ded1120" class="" dir="auto"><strong>&quot;</strong><em><strong>And He is in the direction (jiha) of highness, established over the Throne, encompassing the dominion, His knowledge encompassing the things,</strong></em><strong> {To Him ascends the good word, and the righteous deed raises it} [Fatir: 10].</strong></p><p id="403dcc98-af22-8099-919f-dcb28a0287fe" class="" dir="auto"><strong>{He manages the affair from the heaven to the earth, then it ascends to Him on a day whose measure is a thousand years of what you count} [al-Sajdah: 5].&quot;</strong></p><figure id="403dcc98-af22-80de-aed0-cc2f9653db0a" class="image" data-notion-image="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/Al-Ghunyah_Vol._1_P._121.png" dir="ltr"><a href="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/Al-Ghunyah_Vol._1_P._121.png"><img style="width:2074px" src="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/Al-Ghunyah_Vol._1_P._121.png"/></a></figure><blockquote id="403dcc98-af22-8075-8c4a-db533c2d21a8" class="" dir="auto">Al-Ghunyah, Vol. 1, P. 121</blockquote><hr id="403dcc98-af22-8088-be3f-fa3945a14ea2" dir="auto"/><p id="403dcc98-af22-80e3-a06e-fe6326f01bf1" class="" dir="auto">Shaykh Al-Islam, Sultan Al-Awliyah, Al-Imam Abdul Qadir Al-Jilani wrote:</p><p id="403dcc98-af22-80f8-bf40-e6f5e116e3d1" class="" dir="auto"><strong>When a person visits a grave, he should not place his hand on it, and he should not kiss it, because that is the practice of the Jews. He should not sit on it, and he should not lean on it, and he should not step on it, unless he is forced to do so. Rather, he should stand where he would stand if the person were alive, and he should show respect to him as if he were alive. He should recite eleven times:</strong></p><p id="403dcc98-af22-802d-8506-f47e7f390063" class="" dir="auto"><em><strong>قل هو اللّٰه أحد<br/>Say: He is Allah, One. (al Ikhlas: 1).</strong></em></p><p id="403dcc98-af22-80af-9ae1-f30934f0726f" class="" dir="auto"><strong>and he recites other parts from the Quran, then he gifts the reward (thawab) of that recitation to the person in the grave. He does this by saying: O Allah, if You have kept me firm upon reciting this surah, then I have gifted its reward to the person in this grave. Then he asks Allah for his need in dua.</strong></p><figure id="403dcc98-af22-80c0-b841-cbfb26838609" class="image" data-notion-image="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/image_(8).png" dir="ltr"><a href="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/image_(8).png"><img style="width:704px" src="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/image_(8).png"/></a></figure><blockquote id="403dcc98-af22-8089-9bd5-c771306bc632" class="" dir="auto">Al-Ghunyah, Vol. 1, P. 91</blockquote><hr id="403dcc98-af22-808e-8e56-ea61193360a3" dir="auto"/><p id="403dcc98-af22-8066-9304-fdc89b88869b" class="" dir="auto">Sultan Al-Awliyah, Shaykh Al-Islam, Abdul Qadir Al-Jilani says:</p><p id="403dcc98-af22-8037-b7d2-e82dfc4921bf" class="" dir="auto"><strong>“Are you not ashamed? The Truth, Mighty and Majestic, describes Himself with attributes that He is pleased to have, yet you perform taʾwīl of them and reject them back to Him? What room is there for you to do this when you have those who preceded you from the Companions and the Tābiʿūn? Our Lord, Mighty and Majestic, is above the Throne, as He said, without tashbīh, taʿṭīl, or tajsīm. O Allah, provide for us, grant us success, and keep us away from introducing innovations.”</strong></p><figure id="403dcc98-af22-8042-9afb-f7bfc60a43c0" class="image" data-notion-image="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/Fath_Al-Rabbani_P._99_-_Sermon_24.png" dir="ltr"><a href="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/Fath_Al-Rabbani_P._99_-_Sermon_24.png"><img style="width:3000px" src="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/Fath_Al-Rabbani_P._99_-_Sermon_24.png"/></a></figure><blockquote id="403dcc98-af22-8051-ad6c-fc1f46bbdd6b" class="" dir="auto">Fath Al-Rabbani, P. 99 - Sermon 24</blockquote><hr id="403dcc98-af22-802b-9713-cc91d51d7020" dir="auto"/><h1 id="403dcc98-af22-80ec-82f5-cf3725bbddb6" class="" dir="auto">The Jahmiyyah:</h1><p id="403dcc98-af22-8018-9a09-d53c0a30f02b" class="" dir="auto">Sultan Al-Awliyah, Shaykh Al-Islam, Abdul Qadir Al-Jilani writes:</p><p id="403dcc98-af22-8022-b0ed-d0a9da307646" class="" dir="auto"><strong>&quot;As for the Jahmiyyah, they are attributed to Jahm ibn Safwan. He used to say: “Faith (iman) is merely knowledge of Allah, His Messenger, and everything that has come from Him.”</strong></p><p id="403dcc98-af22-805a-8e8c-c7b5e4d3270b" class="" dir="auto"><strong>They claim that the Quran is created, that Allah, Exalted is He, did not speak to Musa, and that He, Exalted is He, does not speak, cannot be seen, has no known place, has neither a Throne nor a Footstool, and is not above the Throne.</strong></p><p id="403dcc98-af22-8030-ac40-e7b183935a8a" class="" dir="auto"><strong>They denied the scales, the punishment of the grave, and that Paradise and Hell are created.</strong></p><p id="403dcc98-af22-8020-a90d-c0a3458291ac" class="" dir="auto"><strong>They claimed that when Paradise and Hell are created, they will cease to exist, and that Allah, Mighty and Majestic, will neither speak to His creation nor look at them on the Day of Resurrection. They also claimed that the inhabitants of Paradise will neither look at Allah, Exalted is He, nor see Him therein.</strong></p><p id="403dcc98-af22-801e-98dd-ed222ba2fe0a" class="" dir="auto"><strong>They held that faith consists of the heart&#x27;s knowledge without verbal affirmation, and they denied all the attributes of the Real (al-Haqq), Mighty and Majestic. Exalted is Allah far above all of that, in a manner most sublime.&quot;</strong></p><figure id="403dcc98-af22-8058-b04c-f148be3ad1d4" class="image" data-notion-image="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/Al-Ghunyah_Vol._1_P._185.png" dir="ltr"><a href="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/Al-Ghunyah_Vol._1_P._185.png"><img style="width:3624px" src="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/Al-Ghunyah_Vol._1_P._185.png"/></a></figure><blockquote id="403dcc98-af22-80cc-b22a-fcfc6d4f03d8" class="" dir="auto">Al-Ghunyah, Vol. 1, P. 185</blockquote><hr id="403dcc98-af22-8078-9373-ea5b33c45fad" dir="auto"/><p id="403dcc98-af22-8068-a0a9-cb4be0acc3b2" class="" dir="auto">Sultan Al-Awliyah, Shaykh Al-Islam, Abdul Qadir Al-Jilani writes:</p><p id="403dcc98-af22-80c0-9edf-fa704af0b03e" class="" dir="auto"><strong>(Chapter) Know that the people of innovation have distinguishing signs by which they are recognized.</strong></p><p id="403dcc98-af22-80df-a40c-d872203456c7" class="" dir="auto"><strong>The sign of the people of innovation is their attacking the people of transmitted reports (Ahl al-Athar).</strong></p><p id="403dcc98-af22-808f-98f0-f01678ef075a" class="" dir="auto"><strong>The sign of the heretics (zanadiqah) is their calling the people of transmitted reports “Hashawiyyah,” by which they intend to invalidate the transmitted reports.</strong></p><p id="403dcc98-af22-80bc-86d4-d2def1319b8e" class="" dir="auto"><strong>The sign of the Qadariyyah is their calling the people of transmitted reports “Mujbirah” (those who hold that people are compelled).</strong></p><p id="403dcc98-af22-8017-a277-e00bce5ea416" class="" dir="auto"><strong>The sign of the Jahmiyyah is their calling the people of the Sunnah “Mushabbihah” (those who liken Allah to His creation).</strong></p><p id="403dcc98-af22-8002-ba62-c0d1044141d7" class="" dir="auto"><strong>The sign of the Rafidah is their calling the people of transmitted reports “Nawasib” (those who oppose or hate the Ahl al-Bayt).</strong></p><p id="403dcc98-af22-80b6-86f4-ce3ef287d2f9" class="" dir="auto"><strong>All of this stems from partisanship and spite toward the people of the Sunnah. They have only one name: the Companions of Hadith (Ashab al-Hadith).</strong></p><p id="403dcc98-af22-8029-ac0a-fdc95ba91553" class="" dir="auto"><strong>The labels given to them by the people of innovation do not stick to them, just as the labels given to the Prophet ﷺ by the disbelievers of Makkah—sorcerer, poet, madman, bewitched, and soothsayer—did not stick to him. His name, in the sight of Allah, His angels, mankind, jinn, and all His creation, was none other than that of a Messenger and Prophet, free of all such defects.</strong></p><p id="403dcc98-af22-80a8-a855-f0272bee3fd3" class="" dir="auto"><strong>Allah, Exalted is He, said:</strong></p><p id="403dcc98-af22-8073-b5d8-edbcf7204212" class="" dir="auto"><em><strong>“Look how they strike comparisons for you, so they have gone astray and cannot find a way.” [Al-Isra’ 17:48]</strong></em></p><figure id="403dcc98-af22-8068-a856-f0391d62ae34" class="image" data-notion-image="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/Al-Ghunyah_Vol._1_P._166.png" dir="ltr"><a href="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/Al-Ghunyah_Vol._1_P._166.png"><img style="width:3624px" src="Imam%20Abdul%20Qadir%20Al-Jilani%20(%D8%B1%D8%B6%D9%8A%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B9%D9%86%D9%87)/Al-Ghunyah_Vol._1_P._166.png"/></a></figure><blockquote id="403dcc98-af22-80be-b3df-e1bb28943e79" class="" dir="auto">Al-Ghunyah, Vol. 1, P. 166</blockquote></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
