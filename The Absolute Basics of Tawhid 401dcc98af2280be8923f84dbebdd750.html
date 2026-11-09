@@ -1,0 +1,798 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>The Absolute Basics of Tawhid</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+	/* Paint a complete callout box on every PDF page fragment. */
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+}
+
+/* For default-background callouts, render the border outline. */
+.callout.block-color-default_background {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+/*
+ * Toggles and callouts hold arbitrary content, so they can easily be taller
+ * than a page. They must stay breakable: avoiding breaks inside them makes
+ * Chromium push the whole block onto the next page, which leaves the previous
+ * page mostly empty before every long toggle.
+ */
+details,
+aside {
+	margin: 1.25em 0;
+}
+
+/* Keep a toggle's title on the same page as the start of its content. */
+summary {
+	page-break-after: avoid;
+	break-after: avoid;
+}
+
+/*
+ * Toggle headings render as <h1/h2/h3 style="display:inline-block"> inside
+ * <summary>. Without this reset, the heading's margin-top pushes it below the
+ * ::marker (▼), so the triangle and the title appear on separate lines.
+ */
+summary h1,
+summary h2,
+summary h3,
+summary h4 {
+	margin-top: 0;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding-inline: 0.125rem;
+	padding-block: 0.375rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+/*
+ * Render emoji icons using a ::before pseudo-element to keep the glyph
+ * out of the DOM textContent traversal. This avoids double-rendering icons
+ * in callouts and page titles.
+ * NOTE(slim/html-export-pseudo-icons): I can't tagref this because it will
+ * flag as a duplicate tag after codegen.
+ */
+.icon[data-emoji]::before {
+	content: attr(data-emoji);
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	margin-right: 0.4em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.tab {
+	margin: 1.25em 0;
+	padding-inline: 1rem;
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../site.css"><script src="../../site.js" defer></script></head><body><article id="401dcc98-af22-80be-8923-f84dbebdd750" class="page sans"><header><h1 class="page-title" dir="auto">The Absolute Basics of Tawhid</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><h1 id="401dcc98-af22-80cd-9967-fffd042f340c" class="" dir="auto">Tawhid and its categories:</h1><p id="401dcc98-af22-809d-ad87-c957607cd316" class="" dir="auto"><strong>Shaykh Salih Al-Uthaymeen writes:</strong></p><p id="401dcc98-af22-8011-9c63-cb7d958c8048" class="" dir="auto"><em>“Before we begin talking about this great message, we would like to point out that all of the messengers’ messages, from the first of them Noah (Nuh)عليه السلام, to the last of them, Muhammad صلى الله عليه وسلم all call for monotheism (Tawhid).</em></p><p id="401dcc98-af22-80da-8cae-f34fd898fb4a" class="" dir="auto"><em>Allah said: {</em><em><strong>And We did not send before you any messenger but to him was it revealed that there is no god but Me, so worship Me</strong></em><em>} [Al-Anbiya’: 25].</em></p><p id="401dcc98-af22-8080-88e2-f8223dbcf4dc" class="" dir="auto"><em>And Allah said: {</em><em><strong>And We have certainly sent into every nation a messenger, saying, “Worship God and avoid the Taghut”</strong></em><em>} [An-Nahl: 36].</em></p><p id="401dcc98-af22-80fa-a00d-fc526fe2e249" class="" dir="auto"><em>This is because creation was created for one , which is Allah. They were created to worship Him, so that their hearts would be attached to Him. Deification, glorification, fear, hope, trust, desire, and awe, until they are detached from everything in this world that does not help them in uniting God Almighty in these matters. Because you are a created being, you must belong to your Creator, heart and soul in everything.</em></p><p id="401dcc98-af22-80cb-95ff-e0cd3a9f3e45" class="" dir="auto"><em>That is why the Messengers عليهم السلام, called for this great and important matter: to worship Allah alone, without partners.</em></p><p id="401dcc98-af22-801e-9e65-e281910929bc" class="" dir="auto"><em>The Messengers whom Allah sent to mankind did not call for the unification of worship (Tawhid Al-Uloohiyyah) as they called for the unification of Lordship (Tawhid Al-Rububiyah), because those who deny Tawhid Al-Rububiyah are very few, and even those who deny it in the depths of their souls cannot deny it, unless they have robbed the perceptive minds of the slightest understanding, for they may deny this out of arrogance.</em></p><p id="401dcc98-af22-8090-99d0-e3ed4ef1c809" class="" dir="auto"><strong>The scholars, may God have mercy on them, divided monotheism into three categories:</strong></p><p id="401dcc98-af22-804b-a1b9-dfc165053c98" class="" dir="auto"><strong>One of them: Tawhid Al-Rububiyyah</strong></p><p id="401dcc98-af22-80c4-b7e2-db730410e24b" class="" dir="auto"><em>It is “</em><em><strong>singling out God Almighty in three matters: creation, dominion, and management.</strong></em><em>”</em></p><p id="401dcc98-af22-80a8-a7ed-d75620abd47a" class="" dir="auto"><em>The evidence for this is the Almighty’s saying: {</em><em><strong>Indeed, to Him belongs the creation and the command</strong></em><em>} [Al-A’raf, 54]. Then consider the opening of this verse with (except), indicating warning and emphasis: {</em><em><strong>Indeed, to Him belongs the creation and the command</strong></em><em>} [Al-A’raf: 4], and no other than Him, for this is the creation, and the command is the management.</em></p><p id="401dcc98-af22-807e-8716-fbab1e1430b3" class="" dir="auto"><em>As for kingship, its evidence is like the Almighty’s saying: {</em><em><strong>And to God belongs the dominion of the heavens and the earth</strong></em><em>}[Al-Jathiya: 27], for this indicates that He, Glory be to Him, is alone in kingship, and the evidence is derived from this verse, as previously presented, what is justified by the delay.</em></p><p id="401dcc98-af22-8042-9f44-c06980bf05bf" class="" dir="auto"><em>Therefore, God Almighty is alone in creation, dominion, and management.</em></p><p id="401dcc98-af22-806c-8a72-fa8257cd7475" class="" dir="auto"><em>If you say: How do you combine what you have decided with proving creation to other than God, such as the Almighty’s saying: {</em><em><strong>So blessed be God, the best of creators</strong></em><em>} [Al-Mu’minun: 14], and such as the prophet صلى الله عليه وسلم regarding the photographers: “</em><em><strong>It will be said to them: ‘Bring to life what you have created’,</strong></em><em>” and an example of the Almighty’s saying in the holy hadith: “</em><em><strong>And who is more unjust than he who creates like my creation?</strong></em><em>”, then how do you combine your saying: God Alone in creation, and between these texts?!</em></p><p id="401dcc98-af22-8092-afa4-f5066ee7460f" class="" dir="auto"><em>The answer is to say: </em><em><strong>Creation is beginning something, and this is specific to God Almighty</strong></em><em>. As for transforming something from one form to another, it is not a real creation, even if it is called creation in view of formation, but in reality it is not a complete creation. For example: This carpenter made a door from wood, so it is said: He created a door, but the material of this craft that he created is God Almighty. All people, no matter how great their ability, will never be able to create an arak stick, nor to create an atom, nor to create flies.</em></p><p id="401dcc98-af22-80e5-8baa-e21d4c004169" class="" dir="auto"><em>And listen to the words of Allah: {</em><em><strong>O humanity! A lesson is set forth, so listen to it ˹carefully˺: those ˹idols˺ you invoke besides Allah can never create ˹so much as˺ a fly, even if they ˹all˺ were to come together for that. And if a fly were to snatch anything away from them, they cannot ˹even˺ retrieve it from the fly. How powerless are those who invoke and those invoked!</strong></em><em>} [Al-Hajj: 73].</em></p><p id="401dcc98-af22-80de-927e-d802e9f53817" class="" dir="auto"><em>{{Those}: a relative noun that includes everything that is called upon other than God, such as trees, stones, human beings, angels, and other things. All those whom they call upon other than God. {</em><em><strong>can never create ˹so much as˺ a fly</strong></em><em>} If each one were to do this alone, his inability would be more likely, {</em><em><strong>And if a fly were to snatch anything away from them, they cannot ˹even˺ retrieve it from the fly.</strong></em><em>} Even those who call on other than God, if a fly robbed them of something, they would not be able to rescue it from this weak fly. And if a fly fell on the most powerful king on earth and sucked out some of his perfume, this king would not be able to extract the perfume from this fly. Likewise, if it fell on His food, then God Almighty is the Creator alone.</em></p><figure id="401dcc98-af22-8029-a038-ebff51ba02d2" class="image" data-notion-image="The%20Absolute%20Basics%20of%20Tawhid/image_(4).png" dir="ltr"><a href="The%20Absolute%20Basics%20of%20Tawhid/image_(4).png"><img style="width:703.9931030273438px" src="The%20Absolute%20Basics%20of%20Tawhid/image_(4).png"/></a></figure><p id="401dcc98-af22-8060-8640-f6d97e9f30ba" class="" dir="auto"><strong>[Second Section: Monotheism of Divinity]</strong></p><p id="401dcc98-af22-8089-abcb-dbae8065d4a7" class="" dir="auto"><em><strong>It is singling out God Almighty for worship.</strong></em><em> That you should not be a slave to anyone other than God, that you should not worship a king, a prophet, a guardian, an old man, a mother, or a father. You should not worship anyone but God alone, so God Almighty alone is singled out for deification and worship. This is why it is called: monotheism of divinity, and it is called: monotheism of worship. Considering that adding him to God is monotheism of divinity, and considering adding him to the worshiper is monotheism of worship.</em></p><p id="401dcc98-af22-8065-8c91-f2fc1a31754d" class="" dir="auto"><em><strong>Worship is based on two great things, namely love and glorification</strong></em><em>, which result from them: {</em><em><strong>Indeed, they used to hasten to do good deeds and call upon Us with hope and dread</strong></em><em>} [Al-Anbiya’: 90], so with love comes desire, and with glorification comes awe and fear.</em></p><p id="401dcc98-af22-8092-bb30-f2aa22e0ac7b" class="" dir="auto">That is why worship was commands and prohibitions: <em>commands based on the desire and request to reach the Commander, and prohibitions based on glorification and awe of this great One.</em></p><p id="401dcc98-af22-800b-ac47-e2dd73cf6713" class="" dir="auto"><em>If you love God Almighty, you desire what He has and desire to reach Him, and you seek the path that leads to Him, and you obey Him in the most perfect way, and if His greatness you fear Him, whenever you intend to commit disobedience, you sense the greatness of the Creator, the Almighty, and you flee, {</em><em><strong>And indeed I intended for it and they intended for it, had he not seen the proof of his Lord. Thus, We will surely turn away from him evil and immorality</strong></em><em>} [Joseph: 24]. This is from God’s blessing upon you. If you are about to commit a sin, you find God in front of you, so you stand, fear, and distance yourself from the sin, because you worship God with desire and fear.</em></p><p id="401dcc98-af22-80e2-8b1e-d484623bccc0" class="" dir="auto"><strong>What is the meaning of worship?</strong></p><p id="401dcc98-af22-805e-90c9-e17fbbeae084" class="" dir="auto"><em><strong>Worship: refers to two things, the action and the object.</strong></em></p><p id="401dcc98-af22-8003-ba4f-d5ac1413f426" class="" dir="auto">I<strong>t is used to refer to the action, which is worship.</strong> It is said: A man worshiped his Lord as an act of worship and devoutness, and calling it worship is in the sense of giving the noun of the infinitive, and we know it by considering the application of it to the action as: “submissiveness to God Almighty out of love and reverence, by doing His commands and avoiding His prohibitions.” And everyone who submits to God is exalted in God, {<strong>and glory belongs to God and to His Messenger</strong>} [Al-Munafiqun: 8]. <strong>It is given to the object, meaning: the one who is worshiped</strong>, and in this sense it is known as what Sheikh al-Islam Ibn Taymiyyah defined it with, when he said, may God have mercy on him: “Worship is a comprehensive name for everything that God loves and is pleased with, from words and deeds, both apparent and hidden”<em>.</em></p><p id="401dcc98-af22-807b-b511-d6ab1f8bb4e1" class="" dir="auto"><em><strong>This thing with which we worship God must be directed to God, and must not be diverted to anything else, such as prayer, fasting, zakat, Hajj, supplication, vows, fear, and trust... and other forms of worship.”</strong></em></p><figure id="401dcc98-af22-8063-9aa3-daf2c38e6174" class="image" data-notion-image="The%20Absolute%20Basics%20of%20Tawhid/image_(5).png" dir="ltr"><a href="The%20Absolute%20Basics%20of%20Tawhid/image_(5).png"><img style="width:703.9931030273438px" src="The%20Absolute%20Basics%20of%20Tawhid/image_(5).png"/></a></figure><p id="401dcc98-af22-8051-86ee-ce891e4059e5" class="" dir="auto">In summary:</p><p id="401dcc98-af22-8037-a0e0-de41b381049c" class="" dir="auto"><strong>The Three Categories of Tawheed</strong></p><ol type="1" id="401dcc98-af22-8025-9903-f81042d78d1b" class="numbered-list" start="1" dir="auto"><li>Tawheed Ar Rurubiyyah<br/>Singling Allah out in His actions (like creation)</li></ol><ol type="1" id="401dcc98-af22-80b6-8abc-dd5e235f7407" class="numbered-list" start="2" dir="auto"><li>Tawheed Al Uluhiyyah<br/>Singling out Allah in our actions (like ibadah)</li></ol><ol type="1" id="401dcc98-af22-80cb-be67-d4221404ddd5" class="numbered-list" start="3" dir="auto"><li>Tawheed Al Asma Wa As Sifaat<br/>Affirming the Names and Attributes as described in Qur’an and Sunnah to our knowledge without denial (Tatil) or likening to creation (Tashbih) with potential suspension of determination</li></ol><p id="401dcc98-af22-80ad-9ac1-dfe0d226baca" class="" dir="auto"><strong>Evidence</strong></p><ul id="401dcc98-af22-80b3-a963-d1b757f71792" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Tawheed Ar Rurubiyyah: The universe consists of mumkinat (contingent entities) that need an ultimate, uncaused Cause (Wajib al-Wujud)</li></ul><p id="401dcc98-af22-8029-8232-ce1e47e64cf2" class="" dir="auto">Or were they created by nothing? Or were they themselves the creators?”<br/>(Qur’an 52:35)</p><p id="401dcc98-af22-8098-b02c-fc4aadb19a1e" class="" dir="auto">“Allah is the Creator of all things, and He is, over all things, Disposer of affairs.”<br/>(Qur’an 39:62)</p><p id="401dcc98-af22-8083-94e9-e38f2e7a8917" class="" dir="auto">“Say, ‘Allah is the Creator of all things, and He is the One, the Prevailing.’”<br/>(Qur’an 13:16)</p><ul id="401dcc98-af22-8097-ba30-cb5c7b1f4a1f" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Tawheed Al Uluhiyyah: If two creators existed with absolute power, a conflict in their wills would result in chaos or logical impossibility, therefore, absolute divine power logically requires strict singularity (Burhan al-Tamanu)</li></ul><p id="401dcc98-af22-805d-b83a-e2cc6ef6a6fe" class="" dir="auto">“Had there been within the heavens and earth gods besides Allah, they both would have been ruined. So glory be to Allah, Lord of the Throne, above what they describe.”<br/>(Qur’an 21:22)</p><p id="401dcc98-af22-8079-931d-f975ecf28dc6" class="" dir="auto">“Allah has not taken any son, nor has there ever been with Him any deity. Otherwise, each deity would have taken what it created, and some of them would have overcome others.”<br/>(Qur’an 23:91)</p><p id="401dcc98-af22-80de-b027-f8144308dc5d" class="" dir="auto">“Say, ‘He is Allah, [who is] One.’”<br/>(Qur’an 112:1)</p><p id="401dcc98-af22-80a9-ad6b-d2de0f96bdb6" class="" dir="auto">“Your God is only One God; there is no deity except Him, the Most Merciful, the Especially Merciful.”<br/>(Qur’an 2:163)</p><ul id="401dcc98-af22-806e-8606-ff7c419bab22" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Tawheed Al Asma Wa As Sifaat: The inability of sensory perception (Al Hiss) to apprehend a thing does not entail its non-existence (‘Adam), for non-perception is epistemically distinct from non-being; thus just as the imperceptibility of air does not rationally necessitate its absence, the transcendence of Allah beyond our sensory and conceptual apprehension does not necessitate negation (Tatil), but rather entails affirming as it is mentioned by revelation without likening it to creation (Tashbih), denying it (Tatil), but rather it is affirmed with potential suspension of determination.</li></ul><p id="401dcc98-af22-808b-a5f5-fee936630309" class="" dir="auto">“There is nothing like unto Him, and He is the All-Hearing, the All-Seeing.”<br/>(Qur’an 42:11)</p><p id="401dcc98-af22-80e4-8c69-ffda06222e78" class="" dir="auto">“Vision does not perceive Him, but He perceives all vision; and He is the Most Subtle, the All-Aware.”<br/>(Qur’an 6:103)</p><p id="401dcc98-af22-80d1-8d04-d0bacc772f91" class="" dir="auto">“And to Allah belong the Most Beautiful Names, so call upon Him by them.”<br/>(Qur’an 7:180)</p><p id="401dcc98-af22-80f4-8900-fc99733b308a" class="" dir="auto">“They do not encompass Him in knowledge.”<br/>(Qur’an 20:110)</p><p id="401dcc98-af22-8077-98c2-f180b3769edb" class="" dir="auto">“There is nothing like unto Him.”<br/>(Qur’an 42:11)</p><p id="401dcc98-af22-80e4-a182-c1d890d6932a" class="" dir="auto"><strong>Imam Ibn Baz says:</strong><br/>And from that is what you have heard about the concern for belief in God, His names, and His attributes, and that His names are all beautiful, and that His attributes are all exalted, and that He, Glory be to Him, is described in them in the manner befitting Him, the Majestic and Most High, without distortion, nor delay, nor conditioning, nor representation, nor addition, nor subtraction. <em>With His names and attributes in the manner befitting Him, glory be to him. Just as His Essence, Glory be to Him, is True and does not resemble [other] essences, so His attributes are all True and do not resemble the attributes of created beings. He, Glory be to Him, is described with the attributes of perfection, far above all attributes of imperfection and defect. He is mounted on the Throne in a level befitting His majesty and greatness. He does not resemble His creation in their leveling, so His leveling on the Throne is not of the same nature as the leveling of creatures on their animals, on their cars, and on Their planes and on their roofs, no, an equality befitting God, not similar to His creation in any of His attributes, the Almighty, as God Almighty said: {</em><em><strong>There is nothing like Him, and He is the All-Hearing, the All-Seeing</strong></em><em>} [Al-Shura: 11] {</em><em><strong>and there is no one equal to Him</strong></em><em>} [Al-Ikhlas: 4]. {</em><em><strong>So do not give God examples. Indeed, God knows and you do not know</strong></em><em>} [An-Nahl: 74]. It is said: Istawa is known and the how is unknown. We do not know the manner of this Istawa, nor its essence, but we know that He, Glory be to Him, is above the Throne, and that He is exalted above all of His creation, and that He is the Most High, the Most High, not There is nothing above him, rather He is the Most High above all of His creation, and thus He described Him as being the Most Merciful, and that He is the Most Merciful, and that He is the Hearer, and that He is the All-Seeing, and that He gets angry and is pleased, and honors and humiliates, and gives and withholds and so on. He is described as having two hands, the Majestic and Most High, and two feet belonging to Him, the Majestic and Most High, that hears and sees, and that He has fingers, but all of them are befitting of God, in which He does not resemble His creation. He said about Himself that He is Glory be to Him. And God Almighty has two hands. God Almighty said: {</em><em><strong>Rather, His hands are spread out</strong></em><em>} [Al-Ma’idah: 64], and God Almighty said: {</em><em><strong>What prevented you from prostrating to that which I created with My hands</strong></em><em>} [p. 75], and He said: {</em><em><strong>And the earth as a whole I took hold of it. On the Day of Resurrection, the heavens will be folded in His right hand</strong></em><em>} [Az-Zumar: 67]. The Messenger, peace and blessings of God be upon him, said: </em><em><strong>God’s right hand is full, and it will not be diminished by the expense of meningitis night and day.</strong></em><em> And he said: </em><em><strong>Hell will continue to be thrown into it, and it will say, “Is there more?” Until the mighty man places his foot in it and some of them lean towards each other, and you say, “Enough enough!”</strong></em></p><p id="401dcc98-af22-8081-829b-fb4efb5e233b" class="" dir="auto"><em>What is meant is that his attributes befit Him, the Almighty, and do not resemble His creation, Glory be to Him, the Most High. So, the people of the Sunnah and the community, who are the Companions and those who followed their path, pass them by as they came, believe in them, and know that they are true, and that God, may God’s prayers and peace be upon him, does not resemble his creation in any of His attributes, the Almighty.</em></p><p id="401dcc98-af22-801f-8214-c41f8b263e5c" class="" dir="auto"><a href="https://binbaz.org.sa/audios/990/%D8%AA%D9%88%D8%AD%D9%8A%D8%AF-%D8%A7%D9%84%D8%A7%D8%B3%D9%85%D8%A7%D8%A1-%D9%88%D8%A7%D9%84%D8%B5%D9%81%D8%A7%D8%AA">https://binbaz.org.sa/audios/990/توحيد-الاسماء-والصفات</a></p><p id="401dcc98-af22-80f9-b9fe-e8141f978b6a" class="" dir="auto">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
